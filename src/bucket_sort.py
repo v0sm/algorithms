@@ -1,4 +1,5 @@
 """Модуль для блочной сортировки (bucket sort)."""
+from src.bubble_sort import bubble_sort
 
 
 def bucket_sort(arr: list[float], buckets: int = None) -> list[float]:
@@ -30,7 +31,7 @@ def bucket_sort(arr: list[float], buckets: int = None) -> list[float]:
         bucket_list[index].append(num)
 
     for i in range(buckets):
-        bucket_list[i].sort()
+        bubble_sort(bucket_list[i])
 
     result = []
     for bucket in bucket_list:
